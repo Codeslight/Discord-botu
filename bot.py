@@ -29,14 +29,26 @@ async def topla(ctx,*args):
     except:
         await ctx.send("Lütfen doğru bir değer girin.")
 @bot.command()
-async def cikarma(ctx,s1=0,s2=0):
-    await ctx.send(s1-s2)
+async def cikarma(ctx,*args):
+    s1=0
+    try:
+        for arg in args:
+            s1=int(arg)
+        await ctx.send(s1)
+    except:
+        await ctx.send("Lütfen doğru bir değer girin.")
 @bot.command()
-async def carpma(ctx,s1=1,s2=1):
-    await ctx.send(s1*s2)
+async def carpma(ctx,*args):
+    s2=1
+    try:
+        for arg in args:
+            s2*=int(arg)
+        await ctx.send(s2)
+    except:
+        await ctx.send("Lütfen doğru bir değer girin.")
 @bot.command()
-async def bolme(ctx,s1=1,s2=1):
-    await ctx.send(s1/s2)
+async def bolme(ctx,s1=1,s2=1,s3=1,s4=1,s5=1,s6=1,s7=1,s8=1,s9=1,s10=1):
+    await ctx.send(s1/s2/s3/s4/s5/s6/s7/s8/s9/s10)
 @bot.command()
 async def faktoriyel(ctx,s1=0):
     await ctx.send(math.factorial(s1))
